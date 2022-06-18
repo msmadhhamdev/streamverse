@@ -1,0 +1,112 @@
+@font-face {
+    font-family: Aquatico;
+    src: url(Aquatico-Regular.otf);
+} @font-face {
+    font-family: Nunito;
+    src: url(Nunito-VariableFont_wght.ttf);
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: #001;
+    font-family: Nunito, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+header {
+    border-radius: 0 0 20px 20px;
+    padding: 10px;
+    text-align: center;
+    background: linear-gradient(45deg, rgb(255, 0, 106),rgb(98, 0, 255));
+}
+.logo {
+    font-weight: 900;
+    font-size: 1.2em;
+    font-family: Aquatico, 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: #fff;
+    letter-spacing: 2px;
+}
+.logo span {
+    font-size: 0.6em;
+    font-weight: normal;
+    font-family: Nunito, Arial, Helvetica, sans-serif;
+}
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.navigator {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 25%;
+}
+.navigator a {
+    border-bottom: 2px solid transparent;
+    padding: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    color: #fff;
+}
+.navigator a:hover {
+    border-bottom: 2px solid #fff;
+}
+.navigator a:active {
+    color: rgb(98, 0, 255);
+    border-bottom-color: rgb(98, 0, 255);
+}
+.navigator a.active-link {
+    color: rgb(255, 0, 106);
+    border-bottom-color: rgb(255, 0, 106);
+}
+nav form input {
+    height: 30px;
+    width: 22vw;
+    margin-right: 10px;
+    border-radius: 5px;
+    padding: 0 10px;
+    border: none;
+    outline: none;
+    font-family: Nunito, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+nav form input:hover, nav form input:active, nav form input:focus {
+    background-color: #fff;
+}
+main {
+    margin-top: 40px;
+    color: #fff;
+}
+.container {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+.Movie {
+    width: 250px;
+    margin: 10px 5px;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 0 2px 1px rgba(255, 255, 255, 0.3);
+    transition: 0.2s;
+}
+.Movie:hover, .Movie:active {
+    background: linear-gradient(0, rgb(98, 0, 255), rgb(255, 0, 106));
+}
+.Movie img {
+    border-radius: inherit;
+    width: 100%;
+}
+.Movie p {
+    margin: 4px 0;
+}
+@media screen and (max-width: 518px) {
+    .Movie {
+        width: 80px;
+        border-radius: 5px;
+        font-size: 0.1em;
+    }
+}
