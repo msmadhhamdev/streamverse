@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import SearchBar from './components/SearchBar'
 import MovieCard from './components/MovieCard'
 import image from "./drstrange.jpg"
+import {FaHome, FaStream, FaIdCard, FaPhone} from "react-icons/fa"
 
 const App = () => {
     const [movieList, setMovieList]   = useState([
@@ -40,15 +41,15 @@ const App = () => {
         <div className="App">
             <header>
                 <div className='logo'>
-                    Streamverse <br /> <span>Stream and Download popular and the latest Movies</span>
+                    Streamverse <br /> <span>Stream the most popular and the latest Movies</span>
                 </div>
             </header>
             <nav>
                 <div className='navigator'>
-                    <a className='active-link' href="#">Home</a>
-                    <a href="#">Streamer</a>
-                    <a href="#">About</a>
-                    <a href="#">Contact</a>
+                    <a className='active-link' href="#"><FaHome role='contentinfo' /> Home</a>
+                    <a href="#"><FaStream role='contentinfo' /> Streamer</a>
+                    <a href="#"><FaIdCard role='contentinfo' /> About</a>
+                    <a href="#"><FaPhone role='contentinfo' /> Contact</a>
                 </div>
                 <SearchBar />
             </nav>
