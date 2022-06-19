@@ -1,10 +1,6 @@
-import React, { useState } from 'react'
+import React from "react";
 
-const SearchBar = () => {
-    const [searchTerm, setSearchTerm] = useState('');
-    const handleInput = (event) => {
-        setSearchTerm(event.target.value);
-    }
+const SearchBar = ({searchTerm, handleInput}) => {
     return (
         <form action="#">
             <input type="search" name="search" id="search" placeholder='Type in to search movies' autoComplete='name' value={searchTerm} onInput={handleInput} autoFocus required />

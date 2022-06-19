@@ -6,8 +6,8 @@ const MovieCard = (props) => {
     <div className="Movie">
         <img src={props.imgUrl} alt="" />
         <h4>{props.title}</h4>
-        <p><FaCalendar role='contentinfo' /> 19/05/2022</p>
-        <p><FaClock role='contentinfo' /> 1h 25m</p>
+        <p><FaCalendar role='contentinfo' /> {props.date}</p>
+        <p><FaClock role='contentinfo' /> {props.duration}</p>
         <p><FaStar role='contentinfo' /> {props.rating}</p>
     </div>
   )
