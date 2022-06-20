@@ -69,7 +69,7 @@ const App = () => {
                     <a href="#"><FaIdCard role='contentinfo' /> About</a>
                     <a href="#"><FaPhone role='contentinfo' /> Contact</a>
                 </div>
-                <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} handleInput={handleInput} />
+                <SearchBar searchTerm={searchTerm} handleInput={handleInput} />
             </nav>
             <main>
                 <div className="container">

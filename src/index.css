@@ -18,7 +18,7 @@ header {
     border-radius: 0 0 20px 20px;
     padding: 10px;
     text-align: center;
-    background: linear-gradient(45deg, rgb(255, 0, 106),rgb(98, 0, 255));
+    background: linear-gradient(45deg, #ff006a,rgb(98, 0, 255));
 }
 .logo {
     font-weight: 900;
@@ -96,10 +96,12 @@ main {
     border-radius: 10px;
     cursor: pointer;
     box-shadow: 0 0 2px 1px rgba(255, 255, 255, 0.3);
-    transition: 0.2s;
+    transition: 0.1s;
 }
 .Movie:hover, .Movie:active {
-    background: linear-gradient(0, rgb(98, 0, 255), rgb(255, 0, 106));
+    transform: scale(1.05);
+    color: #000;
+    background-color: #fff;
 }
 .Movie img {
     border-radius: inherit;
@@ -109,14 +111,11 @@ main {
     display: flex;
     align-items: center;
     margin: 4px 0;
-    color: #ccc;
+    color: #888;
 }
 .Movie p [role='contentinfo'] {
     display: block;
     margin-right: 10px;
-}
-.Movie p:nth-child(5) [role='contentinfo'] {
-    color: rgb(255, 238, 0);
 }
 @media screen and (max-width: 518px) {
     .Movie {
