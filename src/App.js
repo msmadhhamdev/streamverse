@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import SearchBar from './components/SearchBar'
 import MovieCard from './components/MovieCard'
+import logo from "./logo.png"
 import image from "./drstrange.jpg"
 import {FaHome, FaStream, FaIdCard, FaPhone} from "react-icons/fa"
 
@@ -59,7 +60,11 @@ const App = () => {
         <div className="App">
             <header>
                 <div className='logo'>
-                    Streamverse <br /> <span>Stream the most popular and the latest Movies</span>
+                    <img className='logo' src={logo} alt="Streamverse Logo" />
+                    Streamverse
+                </div>
+                <div className='tagline'>
+                    Stream the most popular and the lastest Movies
                 </div>
             </header>
             <nav>
