@@ -86,11 +86,12 @@ main {
 }
 .container {
     display: flex;
+    justify-content: space-evenly;
     flex-wrap: wrap;
 }
 .Movie {
     width: 250px;
-    margin: 10px 5px;
+    margin: 8px 0;
     padding: 5px;
     border-radius: 10px;
     cursor: pointer;
