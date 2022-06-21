@@ -4,6 +4,7 @@ import MovieCard from './components/MovieCard'
 import logo from "./logo.png"
 import image from "./drstrange.jpg"
 import {FaHome, FaStream, FaIdCard, FaPhone} from "react-icons/fa"
+import MovieModal from './components/MovieModal'
 
 const App = () => {
     const date = new Date();
@@ -51,9 +52,18 @@ const App = () => {
     ]);
 
     const [searchTerm, setSearchTerm] = useState('');
+    
+    const [modalVisibility, setModalVisibility] = useState(false);
+    const [modalContent, setModalContent] = useState({});
 
     const handleInput = (event) => {
         setSearchTerm(event.target.value);
+    }
+
+    const handleModal = (title, date, duration, rating, imgUrl) => {
+        setModalVisibility(true);
+        const newContent = {title: title, date: date, duration: duration, rating: rating, imgUrl: imgUrl};
+        setModalContent(newContent);
     }
 
     return (
@@ -81,9 +91,18 @@ const App = () => {
                     {movieList.filter(movie => (
                         movie.title.toLowerCase().includes(searchTerm.toLowerCase())
                     )).map(movie => {
-                        return <MovieCard key={movie.id} imgUrl={movie.imgUrl} title={movie.title} rating={movie.rating} date={movie.date} duration={movie.duration} />
+                        return <MovieCard
+                        key={movie.id}
+                        imgUrl={movie.imgUrl}
+                        title={movie.title}
+                        rating={movie.rating}
+                        date={movie.date}
+                        duration={movie.duration}
+                        handleModal={handleModal}
+                        />
                     })}
                 </div>
+                {modalVisibility && <MovieModal content={modalContent} />}
             </main>
         </div>
       )
