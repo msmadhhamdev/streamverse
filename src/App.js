@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import SearchBar from './components/SearchBar'
 import MovieCard from './components/MovieCard'
 import logo from "./logo.png"
@@ -74,7 +74,7 @@ const App = () => {
                     Streamverse
                 </div>
                 <div className='tagline'>
-                    Stream the most popular and the lastest Movies
+                    Explore all about the most Popular and the Latest Movies
                 </div>
             </header>
             <nav>
