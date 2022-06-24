@@ -6,7 +6,7 @@ const MovieModal = ({content}) => {
     <div className="MovieModal">
         <div className="modal-body">
             <div className='movie-profile'>
-                <img src={content.imgUrl} alt="" />
+                <img src={content.imgUrl} alt="" loading='lazy' />
                 <div className="info">
                     <h1>{content.title}</h1>
                     <p><FaCalendar role='contentinfo' /> {content.date}</p>
