@@ -18,6 +18,70 @@ const App = () => {
             rating: 5
         },
         {
+            id: 1,
+            imgUrl: image,
+            title: 'Spider-Man: No Way Home',
+            duration: '1h 25m',
+            date: `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}`,
+            rating: 5
+        },
+        {
+            id: 1,
+            imgUrl: image,
+            title: 'Spider-Man: No Way Home',
+            duration: '1h 25m',
+            date: `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}`,
+            rating: 5
+        },
+        {
+            id: 1,
+            imgUrl: image,
+            title: 'Spider-Man: No Way Home',
+            duration: '1h 25m',
+            date: `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}`,
+            rating: 5
+        },
+        {
+            id: 1,
+            imgUrl: image,
+            title: 'Spider-Man: No Way Home',
+            duration: '1h 25m',
+            date: `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}`,
+            rating: 5
+        },
+        {
+            id: 1,
+            imgUrl: image,
+            title: 'Spider-Man: No Way Home',
+            duration: '1h 25m',
+            date: `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}`,
+            rating: 5
+        },
+        {
+            id: 1,
+            imgUrl: image,
+            title: 'Spider-Man: No Way Home',
+            duration: '1h 25m',
+            date: `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}`,
+            rating: 5
+        },
+        {
+            id: 1,
+            imgUrl: image,
+            title: 'Spider-Man: No Way Home',
+            duration: '1h 25m',
+            date: `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}`,
+            rating: 5
+        },
+        {
+            id: 1,
+            imgUrl: image,
+            title: 'Spider-Man: No Way Home',
+            duration: '1h 25m',
+            date: `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}`,
+            rating: 5
+        },
+        {
             id: 2,
             imgUrl: image,
             title: 'Dr.Strange in the Multiver of Madness',
@@ -80,7 +144,7 @@ const App = () => {
             <nav>
                 <div className='navigator'>
                     <a className='active-link' href="#"><FaHome role='contentinfo' /> Home</a>
-                    <a href="#"><FaStream role='contentinfo' /> Streamer</a>
+                    <a href="#"><FaStream role='contentinfo' /> Updates</a>
                     <a href="#"><FaIdCard role='contentinfo' /> About</a>
                     <a href="#"><FaPhone role='contentinfo' /> Contact</a>
                 </div>

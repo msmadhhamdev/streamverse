@@ -20,7 +20,7 @@ header {
     border-radius: 0 0 20px 20px;
     padding: 10px;
     text-align: center;
-    background: linear-gradient(45deg, #123 20%, #ff006a 20%, #4A49CB);
+    background: linear-gradient(45deg, #123 20%, #4A49CB 20%);
 }
 .logo {
     display: flex;
@@ -63,12 +63,11 @@ nav {
     border-bottom: 2px solid #fff;
 }
 .navigator a:active {
-    color: rgb(98, 0, 255);
-    border-bottom-color: rgb(98, 0, 255);
+    color: #0ff;
 }
 .navigator a.active-link {
-    color: rgb(255, 0, 106);
-    border-bottom-color: rgb(255, 0, 106);
+    color: #0ff;
+    border-bottom-color: #0ff;
 }
 .navigator a [role='contentinfo'] {
     margin-right: 5px;
