@@ -1,7 +1,7 @@
 import React from 'react'
-import {FaCalendar, FaClock, FaStar, FaTimes} from "react-icons/fa"
+import {FaCalendar, FaClock, FaStar} from "react-icons/fa"
 
-const MovieModal = ({content, handleModalClose}) => {
+const MovieModal = ({content}) => {
     const IMG_API = 'https://image.tmdb.org/t/p/w500';
   return (
     <div className="MovieModal">
@@ -22,7 +22,6 @@ const MovieModal = ({content, handleModalClose}) => {
                 </div>
             </div>
         </div>
-        <button onClick={handleModalClose} className='modal-closer'><FaTimes /></button>
     </div>
   )
 }

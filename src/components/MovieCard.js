@@ -5,7 +5,7 @@ const MovieCard = (props) => {
   const fixedTitle = props.title.split('').slice(0, 28).join('') + '...';
   
   return (
-    <div className="Movie" onClick={() => props.handleModalOpen(props.title, props.release_date, props.lang, props.vote_average, props.overview, props.poster_path)}>
+    <div className="Movie" onClick={() => props.handleModal(props.title, props.release_date, props.lang, props.vote_average, props.overview, props.poster_path)}>
         <img src={IMG_API + props.poster_path} alt={props.title} />
         <h4>{props.title.length > 28 ? fixedTitle : props.title}</h4>
         <p><FaCalendar role='contentinfo' /> {props.release_date}</p>

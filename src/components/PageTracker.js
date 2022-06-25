@@ -1,7 +1,7 @@
 import React from 'react'
 import {FaForward, FaBackward} from 'react-icons/fa'
 
-const PageTracker = ({page, setPage, handleNextPage, handlePrevPage}) => {
+const PageTracker = ({page, handleNextPage, handlePrevPage}) => {
   return (
     <div className='page-tracker'>
          <button onClick={handlePrevPage} title='Previous Page'><FaBackward /></button>
