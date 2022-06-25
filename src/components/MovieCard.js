@@ -1,5 +1,3 @@
-import axios from 'axios';
-import React, {useEffect} from 'react'
 import {FaCalendar, FaLanguage, FaStar} from "react-icons/fa"
 
 const MovieCard = (props) => {
