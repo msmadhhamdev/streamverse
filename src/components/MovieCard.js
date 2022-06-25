@@ -1,15 +1,28 @@
-import React from 'react'
+import axios from 'axios';
+import React, {useEffect} from 'react'
 import {FaCalendar, FaLanguage, FaStar} from "react-icons/fa"
 
 const MovieCard = (props) => {
+  const IMG_API = 'https://image.tmdb.org/t/p/w500';
   const fixedTitle = props.title.split('').slice(0, 28).join('') + '...';
+  useEffect(() => {
+    return async () => {
+      try {
+        const fetchConfig = await axios.get('https://api.themoviedb.org/3/configuration?api_key=82b2f38d627e364a5f470420aa8e8ed3');
+        console.log(fetchConfig)
+      } catch (error) {
+        console.log(error.response.data)
+      }
+    }
+  }, [])
+  
   return (
-    <div className="Movie" onClick={() => props.handleModal(props.title, props.date, props.lang, props.rating, props.overview, props.img)}>
-        <img src={props.img} alt="" />
+    <div className="Movie" onClick={() => props.handleModal(props.title, props.release_date, props.lang, props.vote_average, props.overview, props.poster_path)}>
+        <img src={props.poster_path} alt={props.title} />
         <h4>{props.title.length > 28 ? fixedTitle : props.title}</h4>
-        <p><FaCalendar role='contentinfo' /> {props.date}</p>
+        <p><FaCalendar role='contentinfo' /> {props.release_date}</p>
         <p><FaLanguage role='contentinfo' /> {props.lang}</p>
-        <p><FaStar role='contentinfo' style={{'color': '#ffaa00'}} /> {props.rating}</p>
+        <p><FaStar role='contentinfo' style={{'color': '#ffaa00'}} /> {props.vote_average}</p>
     </div>
   )
 }

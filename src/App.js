@@ -8,44 +8,7 @@ import MovieModal from './components/MovieModal'
 import axios from 'axios'
 
 const App = () => {
-    const [movieList, setMovieList]   = useState([
-        {
-            id: 20,
-            title: 'Uncharted',
-            overview: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt sit voluptates, facere nulla possimus eveniet iusto. Eligendi consequatur nam harum ratione mollitia itaque tempora in aliquam cum? Ab, assumenda repellat!',
-            release_date: '23-04-2012',
-            vote_average: 8.3,
-            original_language: 'jp',
-            poster_path: drStrange
-        },
-        {
-            id: 21,
-            title: 'Morbius',
-            overview: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt sit voluptates, facere nulla possimus eveniet iusto. Eligendi consequatur nam harum ratione mollitia itaque tempora in aliquam cum? Ab, assumenda repellat!',
-            release_date: '31-04-2016',
-            vote_average: 3.8,
-            original_language: 'eu',
-            poster_path: drStrange
-        },
-        {
-            id: 22,
-            title: 'Pokemon',
-            overview: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt sit voluptates, facere nulla possimus eveniet iusto. Eligendi consequatur nam harum ratione mollitia itaque tempora in aliquam cum? Ab, assumenda repellat!',
-            release_date: '12-01-2010',
-            vote_average: 2.8,
-            original_language: 'en',
-            poster_path: drStrange
-        },
-        {
-            id: 23,
-            title: 'Naruto: Boruto The next generations',
-            overview: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt sit voluptates, facere nulla possimus eveniet iusto. Eligendi consequatur nam harum ratione mollitia itaque tempora in aliquam cum? Ab, assumenda repellat!',
-            release_date: '05-09-2003',
-            vote_average: 7.8,
-            original_language: 'en',
-            poster_path: drStrange
-        },
-    ]);
+    const [movieList, setMovieList]   = useState([]);
 
     const [searchTerm, setSearchTerm] = useState('');
     
@@ -65,26 +28,13 @@ const App = () => {
         fetchMovies();
     }, []);
 
-    useEffect(() => {
-        const fetchImages = async () => {
-            try {
-                const response = await axios.get('https://api.themoviedb.org/3/movie//images?api_key=82b2f38d627e364a5f470420aa8e8ed3&language=en-US');
-                console.log(response)
-                setMovieList(response.data.results)
-            } catch (error) {
-                console.log(error.response.data);
-            }
-        }
-        fetchImages();
-    }, []);
-
     const handleInput = (event) => {
         setSearchTerm(event.target.value);
     }
 
-    const handleModal = (title, date, lang, rating, overview, img) => {
+    const handleModal = (title, release_date, lang, vote_average, overview, poster_path) => {
         setModalVisibility(true);
-        const newContent = {title: title, date: date, lang: lang, rating: rating, overview: overview, poster_path: img};
+        const newContent = {title: title, date: release_date, lang: lang, vote_average: vote_average, overview: overview, poster_path: poster_path};
         setModalContent(newContent);
     }
 
@@ -116,10 +66,10 @@ const App = () => {
                         )).map(movie => {
                             return <MovieCard
                             key={movie.id}
-                            img={movie.poster_path}
+                            poster_path={movie.poster_path}
                             title={movie.title}
-                            rating={movie.vote_average}
-                            date={movie.release_date}
+                            vote_average={movie.vote_average}
+                            release_date={movie.release_date}
                             overview={movie.overview}
                             lang={movie.original_language}
                             handleModal={handleModal}

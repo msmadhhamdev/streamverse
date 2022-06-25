@@ -2,11 +2,12 @@ import React from 'react'
 import {FaCalendar, FaClock, FaStar} from "react-icons/fa"
 
 const MovieModal = ({content}) => {
+    const IMG_API = 'https://image.tmdb.org/t/p/w500';
   return (
     <div className="MovieModal">
         <div className="modal-body">
             <div className='movie-profile'>
-                <img src={content.poster_path} alt="" loading='lazy' />
+                <img src={IMG_API + content.poster_path} alt={content.id} />
                 <div className="info">
                     <h1>{content.title}</h1>
                     <p><FaCalendar role='contentinfo' /> {content.date}</p>
