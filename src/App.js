@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react'
 import SearchBar from './components/SearchBar'
 import MovieCard from './components/MovieCard'
 import logo from "./logo.png"
-import drStrange from './drstrange.jpg'
 import {FaHome, FaStream, FaIdCard, FaPhone} from "react-icons/fa"
 import MovieModal from './components/MovieModal'
 import axios from 'axios'
@@ -19,8 +18,7 @@ const App = () => {
         const fetchMovies = async () => {
             try {
                 const response = await axios.get('https://api.themoviedb.org/3/discover/movie?api_key=82b2f38d627e364a5f470420aa8e8ed3&language=en-US');
-                console.log(response)
-                setMovieList(response.data.results)
+                setMovieList(response.data.results);
             } catch (error) {
                 console.log(error.response.data);
             }

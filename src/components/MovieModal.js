@@ -6,19 +6,21 @@ const MovieModal = ({content}) => {
   return (
     <div className="MovieModal">
         <div className="modal-body">
-            <div className='movie-profile'>
-                <img src={IMG_API + content.poster_path} alt={content.id} />
-                <div className="info">
-                    <h1>{content.title}</h1>
-                    <p><FaCalendar role='contentinfo' /> {content.date}</p>
-                    <p><FaClock role='contentinfo' /> {content.lang}</p>
-                    <p><FaStar role='contentinfo' style={{'color': '#ffaa00'}} /> {content.rating}</p>
+            <img className='modal-image' src={IMG_API + content.poster_path} alt={content.title} />
+            <div className="movie-details">
+                <div className='movie-profile'>
+                    <div className="info">
+                        <h1>{content.title}</h1>
+                        <p><FaCalendar role='contentinfo' /> {content.date}</p>
+                        <p><FaClock role='contentinfo' /> {content.lang}</p>
+                        <p><FaStar role='contentinfo' style={{'color': '#ffaa00'}} /> {content.vote_average}</p>
+                    </div>
                 </div>
-            </div>
-            <div className="movie-desc">
-                <h1>Description</h1>
-                <h2>Storyline</h2>
-                <p>{content.overview}</p>
+                <div className="movie-desc">
+                    <h1>Description</h1>
+                    <h2>Storyline</h2>
+                    <p>{content.overview}</p>
+                </div>
             </div>
         </div>
     </div>
