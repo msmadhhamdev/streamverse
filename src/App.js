@@ -37,10 +37,13 @@ const App = () => {
         setSearchTerm(event.target.value);
     }
 
-    const handleModal = (title, release_date, lang, vote_average, overview, poster_path) => {
+    const handleModalOpen = (title, release_date, lang, vote_average, overview, poster_path) => {
         setModalVisibility(true);
         const newContent = {title: title, date: release_date, lang: lang, vote_average: vote_average, overview: overview, poster_path: poster_path};
         setModalContent(newContent);
+    }
+    const handleModalClose = () => {
+        setModalVisibility(false);
     }
 
     const handleNextPage = () => {
@@ -79,6 +82,7 @@ const App = () => {
                 <SearchBar searchTerm={searchTerm} handleInput={handleInput} />
             </nav>
             <main>
+                <h1 className='topic'>Discover</h1>
                 <div className="container">
                     {movieList.length > 0 ? (
                         movieList.filter(movie => (
@@ -92,14 +96,14 @@ const App = () => {
                             release_date={movie.release_date}
                             overview={movie.overview}
                             lang={movie.original_language}
-                            handleModal={handleModal}
+                            handleModalOpen={handleModalOpen}
                             />
                         })
                     ) : (
                         <h2 className='movielist-fallback'>Sorry, there are no movies to show!</h2>
                     ) && <p>Loading...</p>}
                 </div>
-                {modalVisibility && <MovieModal content={modalContent} />}
+                {modalVisibility && <MovieModal content={modalContent} handleModalClose={handleModalClose} />}
             </main>
         </div>
       )
