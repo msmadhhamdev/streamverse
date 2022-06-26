@@ -122,13 +122,16 @@ nav form input:focus {
   position: fixed;
   left: 50%;
   top: 50%;
-  width: 6vw;
-  height: 6vw;
+  width: 3vw;
+  height: 3vw;
+  padding: 4px;
+  border: 2px solid #fff;
+  border-radius: 5px;
   animation: spin 1.5s ease infinite;
 }
 @keyframes spin {
   from { transform: translate(-50%, -50%) rotate(0) }
-  to { transform: translate(-50%, -50%) rotate(360deg) }
+  to { transform: translate(-50%, -50%) rotate(720deg) }
 }
 .spinner img {
   width: 100%;
