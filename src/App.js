@@ -99,7 +99,7 @@ const App = () => {
                         })
                     ) : (
                         <h2 className='movielist-fallback'>Sorry, there are no movies to show!</h2>
-                    ) && <div className='spinner'><img src="./logo.png" alt="" /></div>}
+                    ) && <div className='spinner'><img src="./logo.png" alt="Loading..." /></div>}
                 </div>
                 {modalVisibility && <MovieModal 
                 content={modalContent}
