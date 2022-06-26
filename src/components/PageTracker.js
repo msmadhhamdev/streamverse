@@ -5,7 +5,7 @@ const PageTracker = ({page, handleNextPage, handlePrevPage}) => {
   return (
     <div className='page-tracker'>
          <button onClick={handlePrevPage} title='Previous Page'><FaBackward /></button>
-         <p title='Current Page'>{page}</p>
+         <p title={`Page ${page}`}>{page}</p>
          <button onClick={handleNextPage} title='Next Page'><FaForward /></button>
     </div>
   )

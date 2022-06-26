@@ -3,7 +3,7 @@ import SearchBar from './components/SearchBar'
 import MovieCard from './components/MovieCard'
 import PageTracker from './components/PageTracker'
 import logo from "./logo.png"
-import {FaHome, FaStream, FaIdCard, FaPhone} from "react-icons/fa"
+import {FaCompass, FaChartPie, FaIdCard, FaPhone} from "react-icons/fa"
 import MovieModal from './components/MovieModal'
 import axios from 'axios'
 
@@ -22,10 +22,9 @@ const App = () => {
         const fetchMovies = async () => {
             try {
                 const response = await axios.get(`https://api.themoviedb.org/3/discover/movie?api_key=82b2f38d627e364a5f470420aa8e8ed3&language=en-US&page=${page}`);
-                console.log(response)
                 setMovieList(response.data.results);
             } catch (error) {
-                console.log(error.response.data);
+                alert(error.message)
             } finally {
                 localStorage.setItem('page', page);
             }
@@ -37,10 +36,14 @@ const App = () => {
         setSearchTerm(event.target.value);
     }
 
-    const handleModal = (title, release_date, lang, vote_average, overview, poster_path) => {
+    const handleModal = (title, date, lang, vote, overview, poster) => {
         setModalVisibility(true);
-        const newContent = {title: title, date: release_date, lang: lang, vote_average: vote_average, overview: overview, poster_path: poster_path};
+        const newContent = {title: title, date: date, lang: lang, vote: vote, overview: overview, poster: poster};
         setModalContent(newContent);
+    }
+
+    const handleModalClose = () => {
+        setModalVisibility(false);
     }
 
     const handleNextPage = () => {
@@ -70,8 +73,8 @@ const App = () => {
             </header>
             <nav>
                 <div className='navigator'>
-                    <a className='active-link' href="#"><FaHome role='contentinfo' /> Home</a>
-                    <a href="#"><FaStream role='contentinfo' /> Updates</a>
+                    <a className='active-link' href="#"><FaCompass role='contentinfo' /> Discover</a>
+                    <a href="#"><FaChartPie role='contentinfo' /> Trending</a>
                     <a href="#"><FaIdCard role='contentinfo' /> About</a>
                     <a href="#"><FaPhone role='contentinfo' /> Contact</a>
                 </div>
@@ -86,10 +89,10 @@ const App = () => {
                         )).map(movie => {
                             return <MovieCard
                             key={movie.id}
-                            poster_path={movie.poster_path}
+                            poster={movie.poster_path}
                             title={movie.title}
-                            vote_average={movie.vote_average}
-                            release_date={movie.release_date}
+                            vote={movie.vote_average}
+                            date={movie.release_date}
                             overview={movie.overview}
                             lang={movie.original_language}
                             handleModal={handleModal}
@@ -97,9 +100,9 @@ const App = () => {
                         })
                     ) : (
                         <h2 className='movielist-fallback'>Sorry, there are no movies to show!</h2>
-                    ) && <p>Loading...</p>}
+                    ) && <div className='spinner'><img src="./logo.png" alt="" /></div>}
                 </div>
-                {modalVisibility && <MovieModal content={modalContent} />}
+                {modalVisibility && <MovieModal content={modalContent} handleModalClose={handleModalClose} />}
             </main>
         </div>
       )
