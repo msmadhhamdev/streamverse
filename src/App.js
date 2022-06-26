@@ -9,12 +9,9 @@ import axios from 'axios'
 
 const App = () => {
     const [movieList, setMovieList]   = useState([]);
-
     const [searchTerm, setSearchTerm] = useState('');
-    
     const [modalVisibility, setModalVisibility] = useState(false);
     const [modalContent, setModalContent] = useState({});
-
     const storagePage = localStorage.getItem('page') ? Number.parseInt(localStorage.getItem('page')) : 1;
     const [page, setPage] = useState(storagePage);
 
@@ -22,6 +19,7 @@ const App = () => {
         const fetchMovies = async () => {
             try {
                 const response = await axios.get(`https://api.themoviedb.org/3/discover/movie?api_key=82b2f38d627e364a5f470420aa8e8ed3&language=en-US&page=${page}`);
+                console.log(response)
                 setMovieList(response.data.results);
             } catch (error) {
                 alert(error.message)
@@ -36,9 +34,9 @@ const App = () => {
         setSearchTerm(event.target.value);
     }
 
-    const handleModal = (title, date, lang, vote, overview, poster) => {
+    const handleModal = (id, title, date, lang, vote, overview, poster) => {
         setModalVisibility(true);
-        const newContent = {title: title, date: date, lang: lang, vote: vote, overview: overview, poster: poster};
+        const newContent = {id: id, title: title, date: date, lang: lang, vote: vote, overview: overview, poster: poster};
         setModalContent(newContent);
     }
 
@@ -88,6 +86,7 @@ const App = () => {
                             movie.title.toLowerCase().includes(searchTerm.toLowerCase())
                         )).map(movie => {
                             return <MovieCard
+                            id={movie.id}
                             key={movie.id}
                             poster={movie.poster_path}
                             title={movie.title}
@@ -102,7 +101,10 @@ const App = () => {
                         <h2 className='movielist-fallback'>Sorry, there are no movies to show!</h2>
                     ) && <div className='spinner'><img src="./logo.png" alt="" /></div>}
                 </div>
-                {modalVisibility && <MovieModal content={modalContent} handleModalClose={handleModalClose} />}
+                {modalVisibility && <MovieModal 
+                content={modalContent}
+                handleModalClose={handleModalClose}
+                />}
             </main>
         </div>
       )

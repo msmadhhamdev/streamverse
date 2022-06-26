@@ -20,6 +20,9 @@ const MovieModal = ({content, handleModalClose}) => {
                     <h2>Storyline</h2>
                     <p>{content.overview}</p>
                 </div>
+                <div>
+                    <h2>Casts</h2>
+                </div>
             </div>
         </div>
         <div className='modal-closer' onClick={handleModalClose}><FaTimes /></div>
