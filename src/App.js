@@ -1,21 +1,23 @@
 import { useState, useEffect } from 'react';
 import SearchBar from './components/SearchBar';
-import MovieCard from './components/MovieCard';
+import Home from './components/Home';
 import PageTracker from './components/PageTracker';
+import Trending from './components/Trending';
 import logo from './logo.png';
 import { FaCompass, FaChartPie, FaIdCard, FaPhone } from 'react-icons/fa';
 import MovieModal from './components/MovieModal';
 import axios from 'axios';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 
 const App = () => {
-  const [movieList, setMovieList] = useState([]);
-  const [searchTerm, setSearchTerm] = useState('');
-  const [modalVisibility, setModalVisibility] = useState(false);
-  const [modalContent, setModalContent] = useState({});
-  const storagePage = localStorage.getItem('page')
-    ? Number.parseInt(localStorage.getItem('page'))
-    : 1;
-  const [page, setPage] = useState(storagePage);
+    const [movieList, setMovieList] = useState([]);
+    const [searchTerm, setSearchTerm] = useState('');
+    const [modalVisibility, setModalVisibility] = useState(false);
+    const [modalContent, setModalContent] = useState({});
+    const storagePage = localStorage.getItem('page')
+        ? Number.parseInt(localStorage.getItem('page'))
+        : 1;
+    const [page, setPage] = useState(storagePage);
 
   useEffect(() => {
     const fetchMovies = async () => {
@@ -38,20 +40,6 @@ const App = () => {
     setSearchTerm(event.target.value);
   };
 
-  const handleModal = (id, title, date, lang, vote, overview, poster) => {
-    setModalVisibility(true);
-    const newContent = {
-      id: id,
-      title: title,
-      date: date,
-      lang: lang,
-      vote: vote,
-      overview: overview,
-      poster: poster,
-    };
-    setModalContent(newContent);
-  };
-
   const handleModalClose = () => {
     setModalVisibility(false);
   };
@@ -71,78 +59,62 @@ const App = () => {
   };
 
   return (
-    <div className='App'>
-      <header>
-        <div className='logo'>
-          <img className='logo' src={logo} alt='Streamverse Logo' />
-          Streamverse
-        </div>
-        <div className='tagline'>
-          Explore all about the most Popular and the Latest Movies
-        </div>
-      </header>
-      <nav>
-        <div className='navigator'>
-          <a className='active-link' href='#'>
-            <FaCompass role='contentinfo' /> Discover
-          </a>
-          <a href='#'>
-            <FaChartPie role='contentinfo' /> Trending
-          </a>
-          <a href='#'>
-            <FaIdCard role='contentinfo' /> About
-          </a>
-          <a href='#'>
-            <FaPhone role='contentinfo' /> Contact
-          </a>
-        </div>
-        <PageTracker
-          page={page}
-          handleNextPage={handleNextPage}
-          handlePrevPage={handlePrevPage}
-        />
-        <SearchBar searchTerm={searchTerm} handleInput={handleInput} />
-      </nav>
-      <main>
-        <div className='container'>
-          {movieList.length > 0
-            ? movieList
-                .filter((movie) =>
-                  movie.title.toLowerCase().includes(searchTerm.toLowerCase())
-                )
-                .map((movie) => {
-                  return (
-                    <MovieCard
-                      id={movie.id}
-                      key={movie.id}
-                      poster={movie.poster_path}
-                      title={movie.title}
-                      vote={movie.vote_average}
-                      date={movie.release_date}
-                      overview={movie.overview}
-                      lang={movie.original_language}
-                      handleModal={handleModal}
-                    />
-                  );
-                })
-            : (
-                <h2 className='movielist-fallback'>
-                  Sorry, there are no movies to show!
-                </h2>
-              ) && (
-                <div className='spinner'>
-                  <img src='./logo.png' alt='Loading...' />
+      <Router>
+        <div className='App'>
+            <header>
+                <div className='logo'>
+                <img className='logo' src={logo} alt='Streamverse Logo' />
+                Streamverse
                 </div>
-              )}
+                <div className='tagline'>
+                Explore all about the most Popular and the Latest Movies
+                </div>
+            </header>
+            <nav>
+                <div className='navigator'>
+                <Link className='active-link' to='/'>
+                    <FaCompass role='contentinfo' /> Discover
+                </Link>
+                <Link to='/trending'>
+                    <FaChartPie role='contentinfo' /> Trending
+                </Link>
+                <Link to='/about'>
+                    <FaIdCard role='contentinfo' /> About
+                </Link>
+                <Link to='/contact'>
+                    <FaPhone role='contentinfo' /> Contact
+                </Link>
+                </div>
+                <PageTracker
+                page={page}
+                handleNextPage={handleNextPage}
+                handlePrevPage={handlePrevPage}
+                />
+                <SearchBar searchTerm={searchTerm} handleInput={handleInput} />
+            </nav>
+            <main>
+                <Routes>
+                    <Route path='/' element={
+                        <Home
+                        movieList={movieList} 
+                        searchTerm={searchTerm}
+                        modalVisibility={modalVisibility}
+                        modalContent={modalContent}
+                        setModalVisibility={setModalVisibility}
+                        setModalContent={setModalContent}
+                        />
+                    } />
+                    <Route path='/trending' element={<Trending />} />
+                 </Routes>
+            </main>
+            {modalVisibility && (
+            <MovieModal
+                content={modalContent}
+                handleModalClose={handleModalClose}
+            />
+            )}
         </div>
-        {modalVisibility && (
-          <MovieModal
-            content={modalContent}
-            handleModalClose={handleModalClose}
-          />
-        )}
-      </main>
-    </div>
+    </Router>
   );
 };
 

@@ -140,17 +140,18 @@ main {
   margin-top: 10px;
   color: #fff;
 }
-.container {
+.Discover {
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
   overflow-y: auto;
 }
 main .topic {
+  color: #fff;
   margin: auto;
   padding: 0 20px;
 }
-.container .movielist-fallback {
+.Discover .movielist-fallback {
   transform: translate(0%, 400%);
   color: #ccc;
   text-shadow: 2px 4px 4px 2px #000;
