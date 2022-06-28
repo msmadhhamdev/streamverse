@@ -55,21 +55,16 @@ nav {
 .navigator a {
   display: flex;
   align-items: center;
-  border-bottom: 2px solid transparent;
   padding: 10px;
   text-decoration: none;
   font-weight: bold;
   color: #fff;
 }
 .navigator a:hover {
-  border-bottom: 2px solid #fff;
+  color: deepskyblue;
 }
 .navigator a:active {
-  color: #0ff;
-}
-.navigator a.active-link {
-  color: #0ff;
-  border-bottom-color: #0ff;
+  color: deepskyblue;
 }
 .navigator a [role='contentinfo'] {
   margin-right: 5px;
@@ -90,12 +85,16 @@ nav {
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid #0ff;
+  border: 1px solid deepskyblue;
   border-radius: 20px;
   padding: 5px 20px;
-  color: #0ff;
+  color: deepskyblue;
   background-color: transparent;
   cursor: pointer;
+}
+.page-tracker button:hover {
+  color: #fff;
+  background-color: deepskyblue;
 }
 nav form {
   display: flex;
@@ -145,16 +144,16 @@ main {
 }
 main .topic {
   display: flex;
+  justify-content: center;
   align-items: center;
   width: 100%;
   margin: 0 10px;
   border-radius: 10px;
   padding: 10px 20px;
   color: #fff;
-  text-align: center;
   letter-spacing: 2px;
   font-family: Aquatico;
-  background: linear-gradient(45deg, rgb(98, 0, 255) 25%, rgb(4, 0, 255) 25%, rgb(0, 119, 255));
+  background: linear-gradient(45deg, transparent, rgb(98, 0, 255) 50%, transparent);
 }
 .Home .movielist-fallback {
   transform: translate(0%, 400%);
@@ -279,8 +278,8 @@ main .topic {
   cursor: pointer;
 }
 .modal-closer:hover {
-  color: #0ff;
-  border-color: #0ff;
+  color: deepskyblue;
+  border-color: deepskyblue;
 }
 @media screen and (max-width: 518px) {
   .Movie {

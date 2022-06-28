@@ -72,7 +72,7 @@ const App = () => {
             </header>
             <nav>
                 <div className='navigator'>
-                <Link className='active-link' to='/'>
+                <Link to='/'>
                     <FaCompass role='contentinfo' /> Discover
                 </Link>
                 <Link to='/trending'>
