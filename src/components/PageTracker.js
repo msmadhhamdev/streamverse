@@ -1,4 +1,3 @@
-import React from 'react';
 import { FaForward, FaBackward } from 'react-icons/fa';
 
 const PageTracker = ({ page, handleNextPage, handlePrevPage }) => {

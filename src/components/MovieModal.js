@@ -1,4 +1,3 @@
-import React from 'react';
 import { FaCalendar, FaClock, FaStar, FaTimes } from 'react-icons/fa';
 
 const MovieModal = ({ content, handleModalClose }) => {
