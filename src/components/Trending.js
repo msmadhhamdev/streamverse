@@ -3,11 +3,9 @@ import { useState } from 'react';
 const Trending = () => {
   const [trendingList, setTrendingList] = useState([]);
   return (
-    <main>
-      <div className="Trending">
-        <h1 className='topic'>trending Page</h1>
-      </div>
-    </main>
+    <div className='Trending'>
+      <h2 className='topic'>Trending Page</h2>
+    </div>
   );
 };
 

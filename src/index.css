@@ -20,7 +20,7 @@ header {
   align-items: center;
   padding: 10px;
   text-align: center;
-  background: linear-gradient(45deg, #123 20%, #4a49cb 20%);
+  background: linear-gradient(135deg, #123 20%, #4a49cb 20%);
 }
 .logo {
   display: flex;
@@ -124,9 +124,6 @@ nav form input:focus {
   top: 50%;
   width: 3vw;
   height: 3vw;
-  padding: 4px;
-  border: 2px solid #fff;
-  border-radius: 5px;
   animation: spin 1.5s ease infinite;
 }
 @keyframes spin {
@@ -140,18 +137,26 @@ main {
   margin-top: 10px;
   color: #fff;
 }
-.Discover {
+.Home, .Trending {
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
   overflow-y: auto;
 }
 main .topic {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin: 0 10px;
+  border-radius: 10px;
+  padding: 10px 20px;
   color: #fff;
-  margin: auto;
-  padding: 0 20px;
+  text-align: center;
+  letter-spacing: 2px;
+  font-family: Aquatico;
+  background: linear-gradient(45deg, rgb(98, 0, 255) 25%, rgb(4, 0, 255) 25%, rgb(0, 119, 255));
 }
-.Discover .movielist-fallback {
+.Home .movielist-fallback {
   transform: translate(0%, 400%);
   color: #ccc;
   text-shadow: 2px 4px 4px 2px #000;

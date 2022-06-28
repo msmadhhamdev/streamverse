@@ -16,8 +16,9 @@ const Home = ({searchTerm, movieList, setModalContent, setModalVisibility}) => {
         setModalContent(newContent);
       };
 
-    return ( 
-        <div className='Home'>
+      return ( 
+          <div className='Home'>
+            <h2 className='topic'> Discover</h2>
             {movieList.length > 0
                 ? movieList
                     .filter((movie) =>
