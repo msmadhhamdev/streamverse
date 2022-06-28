@@ -1,12 +1,8 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react';
 
 const Trending = () => {
-    const [trendingList, setTrendingList] = useState([]);
-  return (
-      <div className="Trending">
+  const [trendingList, setTrendingList] = useState([]);
+  return <div className='Trending'></div>;
+};
 
-      </div>
-  )
-}
-
-export default Trending
+export default Trending;
