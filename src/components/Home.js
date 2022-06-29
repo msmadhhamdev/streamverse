@@ -1,4 +1,5 @@
 import MovieCard from './MovieCard';
+import {FaCompass} from 'react-icons/fa'
 
 const Home = ({searchTerm, movieList, setModalContent, setModalVisibility}) => {
 
@@ -18,7 +19,7 @@ const Home = ({searchTerm, movieList, setModalContent, setModalVisibility}) => {
 
       return ( 
           <div className='Home'>
-            <h2 className='topic'> Discover</h2>
+            <h2 className='topic'><FaCompass style={{marginRight: '10px'}} /> Discover</h2>
             {movieList.length > 0
                 ? movieList
                     .filter((movie) =>
