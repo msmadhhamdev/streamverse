@@ -5,6 +5,7 @@ import PageTracker from './components/PageTracker';
 import Trending from './components/Trending';
 import MovieModal from './components/MovieModal';
 import ErrorBox from './components/ErrorBox';
+import PageNotFound from './components/PageNotFound';
 import logo from './logo.png';
 import axios from 'axios';
 import { FaCompass, FaChartPie, FaIdCard, FaPhone } from 'react-icons/fa';
@@ -29,12 +30,8 @@ const App = () => {
         const response = await axios.get(
           `https://api.themoviedb.org/3/discover/movie?api_key=82b2f38d627e364a5f470420aa8e8ed3&language=en-US&page=${page}`
         );
-        if (response.ok) {
-          setMovieList(response.data.results);
-          setError(null);
-        } else {
-          throw Error('Movies cannot be fetched!');
-        }
+        setMovieList(response.data.results);
+        setError(null);
       } catch (error) {
         setError(error.message);
       } finally {
@@ -120,7 +117,8 @@ const App = () => {
                         setModalContent={setModalContent}
                         />
                     } />
-                    <Route path='/trending' element={<Trending />} />
+                    <Route path='/trending' element={<Trending page={page} />} />
+                    <Route path='*' element={<PageNotFound />} />
                  </Routes>
             </main>
             {modalVisibility && (

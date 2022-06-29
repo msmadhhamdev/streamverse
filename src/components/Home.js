@@ -42,7 +42,7 @@ const Home = ({searchTerm, movieList, setModalContent, setModalVisibility}) => {
                     })
                 : (
                     <h2 className='movielist-fallback'>
-                    Sorry, there are no movies to show!
+                        😥 Sorry, could not reach the server!
                     </h2>
                 ) && (
                     <div className='spinner'>

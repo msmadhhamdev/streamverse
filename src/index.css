@@ -73,6 +73,7 @@ nav {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-right: 20px;
 }
 .page-tracker p {
   width: 40px;
@@ -102,7 +103,7 @@ nav form {
 }
 nav form input {
   height: 30px;
-  width: 22vw;
+  width: 26vw;
   margin-right: 10px;
   border-radius: 5px;
   padding: 10px;
@@ -156,7 +157,6 @@ main .topic {
   background: linear-gradient(45deg, transparent, rgb(98, 0, 255) 50%, transparent);
 }
 .Home .movielist-fallback {
-  transform: translate(0%, 400%);
   color: #ccc;
   text-shadow: 2px 4px 4px 2px #000;
 }
@@ -280,6 +280,24 @@ main .topic {
 .modal-closer:hover {
   color: deepskyblue;
   border-color: deepskyblue;
+}
+.page-not-found {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 85vh;
+}
+.page-not-found .pnf-content {
+  border-radius: 10px;
+  padding: 10px;
+  background-color: rgb(255, 0, 55);
+}
+.pnf-content a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  font-weight: bold;
 }
 .error-box {
   position: fixed;
