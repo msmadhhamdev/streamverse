@@ -44,10 +44,10 @@ const App = () => {
     fetchMovies();
     const handleTitleBar = () => {
       if (location.pathname === '/') {
-          document.title = 'Discover | Streamverse';
+          document.title = 'STREAMVERSE | Discover';
       }
       if (location.pathname === '/trending') {
-          document.title = 'Trending | Streamverse';
+          document.title = 'STREAMVERSE | Trending';
       }
   }
   handleTitleBar()
