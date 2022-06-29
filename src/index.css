@@ -305,7 +305,7 @@ main .topic {
   bottom: 10px;
   display: flex;
   align-items: center;
-  border-radius: 10px;
+  border-radius: 30px;
   padding: 10px;
   color: #fff;
   background-color: rgb(255, 0, 85);
