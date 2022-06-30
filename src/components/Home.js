@@ -1,22 +1,7 @@
 import MovieCard from './MovieCard';
 import {FaCompass} from 'react-icons/fa'
 
-const Home = ({searchTerm, movieList, setModalContent, setModalVisibility}) => {
-
-    const handleModal = (id, title, date, lang, vote, overview, poster) => {
-        setModalVisibility(true);
-        const newContent = {
-          id: id,
-          title: title,
-          date: date,
-          lang: lang,
-          vote: vote,
-          overview: overview,
-          poster: poster,
-        };
-        setModalContent(newContent);
-      };
-
+const Home = ({searchTerm, movieList, handleModal}) => {
       return ( 
           <div className='Home'>
             <h2 className='topic'><FaCompass style={{marginRight: '10px'}} /> Discover</h2>

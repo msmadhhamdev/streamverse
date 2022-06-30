@@ -54,6 +54,20 @@ const App = () => {
     setSearchTerm(event.target.value);
   };
 
+  const handleModal = (id, title, date, lang, vote, overview, poster) => {
+    setModalVisibility(true);
+    const newContent = {
+      id: id,
+      title: title,
+      date: date,
+      lang: lang,
+      vote: vote,
+      overview: overview,
+      poster: poster,
+    };
+    setModalContent(newContent);
+  };
+
   const handleModalClose = () => {
     setModalVisibility(false);
   };
@@ -113,11 +127,10 @@ const App = () => {
                         searchTerm={searchTerm}
                         modalVisibility={modalVisibility}
                         modalContent={modalContent}
-                        setModalVisibility={setModalVisibility}
-                        setModalContent={setModalContent}
+                        handleModal={handleModal}
                         />
                     } />
-                    <Route path='/trending' element={<Trending page={page} />} />
+                    <Route path='/trending' element={<Trending page={page} handleModal={handleModal} />} />
                     <Route path='*' element={<PageNotFound />} />
                  </Routes>
             </main>

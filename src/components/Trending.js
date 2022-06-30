@@ -3,7 +3,7 @@ import TrendingList from './TrendingList';
 import {FaChartPie} from 'react-icons/fa'
 import axios from 'axios';
 
-const Trending = ({page}) => {
+const Trending = ({page, handleModal}) => {
   const [trendingList, setTrendingList] = useState([]);
   
   useEffect(() => {
@@ -14,7 +14,7 @@ const Trending = ({page}) => {
   return (
     <div className='Trending'>
       <h2 className='topic'><FaChartPie style={{marginRight: '10px'}} /> Trending</h2>
-      <TrendingList trendings={trendingList} />
+      <TrendingList trendings={trendingList} handleModal={handleModal} />
     </div>
   );
 };

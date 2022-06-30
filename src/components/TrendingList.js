@@ -1,17 +1,20 @@
 import MovieCard from "./MovieCard"
 
-const TrendingList = ({trendings}) => {
+const TrendingList = ({trendings, handleModal}) => {
   return (
       <>
         {
             trendings.length > 0 ? trendings.map(movie => {
                 return <MovieCard
+                id={movie.id}
                 key={movie.id} 
                 title={movie.title} 
                 date={movie.release_date} 
                 lang={movie.original_language} 
-                vote={movie.vote_average} 
-                poster={movie.poster_path} />
+                vote={movie.vote_average}
+                overview={movie.overview}
+                poster={movie.poster_path}
+                handleModal={handleModal} />
             }) : (
                 <h2 className='movielist-fallback'>
                 Sorry, there are no movies to show!

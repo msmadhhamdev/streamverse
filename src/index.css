@@ -217,7 +217,6 @@ main .topic {
 }
 .modal-body {
   display: flex;
-  justify-content: space-between;
   max-width: 90vw;
   width: 90vw;
   height: 90vh;
