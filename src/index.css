@@ -280,6 +280,29 @@ main .topic {
   color: deepskyblue;
   border-color: deepskyblue;
 }
+.About {
+  height: 85vh;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 30px;
+}
+.About img {
+  height: 70vh;
+  border-radius: 30px;
+}
+.About .about-me {
+  padding: 20px;
+}
+.about-me p {
+  margin: 20px 0;
+}
+.about-me .social-links {
+  font-size: 2em;
+}
+.about-me .social-links svg {
+  margin: 0 10px;
+  color: deepskyblue;
+}
 .page-not-found {
   display: flex;
   justify-content: center;

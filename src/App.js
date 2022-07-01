@@ -5,8 +5,9 @@ import PageTracker from './components/PageTracker';
 import Trending from './components/Trending';
 import MovieModal from './components/MovieModal';
 import ErrorBox from './components/ErrorBox';
+import About from './components/About';
 import PageNotFound from './components/PageNotFound';
-import logo from './logo.png';
+import logo from './images/logo.png';
 import axios from 'axios';
 import { FaCompass, FaChartPie, FaIdCard, FaPhone } from 'react-icons/fa';
 import { Routes, Route, Link, useLocation } from 'react-router-dom';
@@ -22,6 +23,7 @@ const App = () => {
         ? Number.parseInt(localStorage.getItem('page'))
         : 1;
     const [page, setPage] = useState(storagePage);
+    const [trackerDisabled, setTrackerDisabled] = useState(false);
     const location = useLocation();
 
   useEffect(() => {
@@ -47,7 +49,11 @@ const App = () => {
           document.title = 'STREAMVERSE | Trending';
       }
   }
-  handleTitleBar()
+  handleTitleBar();
+  const trackerFunction = () => {
+    location.pathname === '/about' || location.pathname === '/contact' ? setTrackerDisabled(true) : setTrackerDisabled(false);
+  }
+  trackerFunction();
   }, [page, location.pathname]);
 
   const handleInput = (event) => {
@@ -116,6 +122,7 @@ const App = () => {
                 page={page}
                 handleNextPage={handleNextPage}
                 handlePrevPage={handlePrevPage}
+                trackerDisabled={trackerDisabled}
                 />
                 <SearchBar searchTerm={searchTerm} handleInput={handleInput} />
             </nav>
@@ -131,6 +138,7 @@ const App = () => {
                         />
                     } />
                     <Route path='/trending' element={<Trending page={page} handleModal={handleModal} />} />
+                    <Route path='/about' element={<About />} />
                     <Route path='*' element={<PageNotFound />} />
                  </Routes>
             </main>
