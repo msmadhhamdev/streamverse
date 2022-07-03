@@ -6,6 +6,7 @@ import Trending from './components/Trending';
 import MovieModal from './components/MovieModal';
 import ErrorBox from './components/ErrorBox';
 import About from './components/About';
+import Contact from './components/Contact';
 import PageNotFound from './components/PageNotFound';
 import logo from './images/logo.png';
 import axios from 'axios';
@@ -139,6 +140,7 @@ const App = () => {
                     } />
                     <Route path='/trending' element={<Trending page={page} handleModal={handleModal} />} />
                     <Route path='/about' element={<About />} />
+                    <Route path='/contact' element={<Contact />} />
                     <Route path='*' element={<PageNotFound />} />
                  </Routes>
             </main>
