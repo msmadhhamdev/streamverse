@@ -1,7 +1,8 @@
 const Contact = () => {
   return (
     <div className="Contact">
-        <form name="feedback" autoComplete="on" encType="multipart/form-data" netlify>
+        <form name="feedback" action="/contact" autoComplete="on" encType="multipart/form-data" netlify-honeypot="bot-field" netlify>
+            <input type="hidden" name="form-name" value="Feedback" />
             <input type="hidden" name="subject" value="Adhham Safwan from Streamverse" />
             <fieldset>
                 <label htmlFor="username"><legend>Name</legend></label>
