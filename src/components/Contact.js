@@ -3,7 +3,7 @@ import {FaPaperPlane} from 'react-icons/fa'
 const Contact = () => {
   return (
     <div className="Contact">
-        <form name="contact" autoComplete="on">
+        <form name="contact" autoComplete="on" netlify>
             <input type="hidden" name="form-name" value="contact" />
             <div className="user-info-field">
                 <h1>Contact Me</h1>
