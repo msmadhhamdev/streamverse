@@ -2,7 +2,7 @@ import {FaPaperPlane} from 'react-icons/fa'
 
 const Contact = () => {
   return (
-    <div className="Contact">
+    <div className="Contact" onSubmit={ev => ev.preventDefault()}>
         <form name="contact" autoComplete="on">
             <input type="hidden" name="form-name" value="contact" />
             <div className="user-info-field">
