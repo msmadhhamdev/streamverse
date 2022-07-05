@@ -3,11 +3,10 @@ import {FaPaperPlane} from 'react-icons/fa'
 const Contact = () => {
   return (
     <div className="Contact">
-        <form name="feedback" autoComplete="on" netlify-honeypot="bot-field" netlify>
+        <form name="feedback" autoComplete="on">
+            <input type="hidden" name="form-name" value="contact" />
             <div className="user-info-field">
                 <h1>Contact Me</h1>
-                <input type="hidden" name="form-name" value="Feedback" />
-                <input type="hidden" name="subject" value="Adhham Safwan from Streamverse" />
                 <fieldset>
                     <legend><label htmlFor="username">Name</label></legend>
                     <input type="text" id="username" name="username" placeholder="Your name..." autoFocus autoComplete="name" required />
