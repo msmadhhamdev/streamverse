@@ -1,10 +1,12 @@
 import MovieCard from "./MovieCard"
 
-const TrendingList = ({trendings, handleModal}) => {
+const TrendingList = ({trendings, handleModal, searchTerm}) => {
   return (
       <>
         {
-            trendings.length > 0 ? trendings.map(movie => {
+            trendings.length > 0 ?  trendings.filter(movie => {
+                return movie.title.toLowerCase().includes(searchTerm.toLowerCase())
+            }).map(movie => {
                 return <MovieCard
                 id={movie.id}
                 key={movie.id} 

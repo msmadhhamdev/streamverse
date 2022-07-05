@@ -7,8 +7,9 @@ const Home = ({searchTerm, movieList, handleModal}) => {
             <h2 className='topic'><FaCompass style={{marginRight: '10px'}} /> Discover</h2>
             {movieList.length > 0
                 ? movieList
-                    .filter((movie) =>
-                    movie.title.toLowerCase().includes(searchTerm.toLowerCase())
+                    .filter((movie) => (
+                        movie.title.toLowerCase().includes(searchTerm.toLowerCase())
+                    )
                     )
                     .map((movie) => {
                     return (

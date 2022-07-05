@@ -296,15 +296,20 @@ main .topic {
 .about-me h1 {
   font-family: Aquatico, 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   letter-spacing: 2px;
+  margin-bottom: 10px;
 }
 .about-me p {
-  margin: 20px 0;
+  margin: 10px 0;
 }
 .about-me .social-links {
   font-size: 2em;
+  margin-top: 30px;
 }
 .about-me .social-links svg {
   margin: 0 10px;
+}
+.about-me .social-links svg:hover {
+  transform: scale(1.1);
 }
 .social-links .github {
   color: #fff;
@@ -316,7 +321,24 @@ main .topic {
   color: #08f;
 }
 .social-links .portfolio {
-  color: rgb(0, 255, 179);
+  color: #fff;
+}
+.About .contact-info p {
+  display: flex;
+  align-items: center;
+}
+.contact-info h2 {
+  margin-top: 20px;
+  font-family: Aquatico, 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  letter-spacing: 2px;
+}
+.contact-info p a {
+  text-decoration: none;
+  color: #0ff;
+  margin: 0 10px;
+}
+footer {
+  margin-top: 30px;
 }
 .page-not-found {
   display: flex;
@@ -335,6 +357,58 @@ main .topic {
   text-decoration: none;
   color: rgb(0, 0, 0);
   font-weight: bold;
+}
+.Contact form {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 85vh;
+}
+.Contact form h1 {
+  font-family: Aquatico, Arial, Helvetica, sans-serif;
+}
+.Contact form .user-info-field, form .user-comment-field {
+  width: 45%;
+}
+.Contact form fieldset {
+  margin: 10px auto;
+  padding: 10px;
+  border-radius: 10px;
+}
+.Contact form legend {
+  margin: 0 10px;
+  padding: 0 10px;
+}
+.Contact form input, form textarea {
+  width: 100%;
+  border: none;
+  padding: 10px;
+  outline: none;
+  color: #fff;
+  font-size: 1.0005em;
+  background: transparent;
+}
+.Contact form input {
+  height: 30px;
+  border-radius: 5px;
+}
+.Contact form #form-clear-btn {
+  border: 2px solid #fff;
+  border-radius: 30px;
+  padding: 10px 20px;
+  color: #fff;
+  background-color: transparent;
+  cursor: pointer;
+}
+.Contact form #form-submit-btn {
+  width: 84%;
+  margin: 0 10px;
+  border: none;
+  border-radius: 30px;
+  padding: 10px 20px;
+  color: #fff;
+  background-color: #0c8;
+  cursor: pointer;
 }
 .error-box {
   position: fixed;

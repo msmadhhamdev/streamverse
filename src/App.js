@@ -15,6 +15,7 @@ import { Routes, Route, Link, useLocation } from 'react-router-dom';
 
 const App = () => {
     const [movieList, setMovieList] = useState([]);
+    const [trendingList, setTrendingList] = useState([]);
     const [searchTerm, setSearchTerm] = useState('');
     const [modalVisibility, setModalVisibility] = useState(false);
     const [modalContent, setModalContent] = useState({});
@@ -125,7 +126,7 @@ const App = () => {
                 handlePrevPage={handlePrevPage}
                 trackerDisabled={trackerDisabled}
                 />
-                <SearchBar searchTerm={searchTerm} handleInput={handleInput} />
+                {(location.pathname === '/' || location.pathname === '/trending') && <SearchBar searchTerm={searchTerm} handleInput={handleInput} />}
             </nav>
             <main>
                 <Routes>
@@ -136,9 +137,10 @@ const App = () => {
                         modalVisibility={modalVisibility}
                         modalContent={modalContent}
                         handleModal={handleModal}
+                        trendingList={trendingList}
                         />
                     } />
-                    <Route path='/trending' element={<Trending page={page} handleModal={handleModal} />} />
+                    <Route path='/trending' element={<Trending trendingList={trendingList} setTrendingList={setTrendingList} page={page} handleModal={handleModal} searchTerm={searchTerm} />} />
                     <Route path='/about' element={<About />} />
                     <Route path='/contact' element={<Contact />} />
                     <Route path='*' element={<PageNotFound />} />
