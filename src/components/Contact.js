@@ -3,8 +3,7 @@ import {FaPaperPlane} from 'react-icons/fa'
 const Contact = () => {
   return (
     <div className="Contact">
-        <form name="contact" autoComplete="on" netlify>
-            <input type="hidden" name="form-name" value="contact" />
+        <form name="contact" onSubmit='mailto:msmadhhamg@gmai.com?subject=something' autoComplete="on">
             <div className="user-info-field">
                 <h1>Contact Me</h1>
                 <fieldset>
