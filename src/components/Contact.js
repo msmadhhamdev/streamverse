@@ -3,7 +3,6 @@ import {FaPaperPlane} from 'react-icons/fa'
 const Contact = () => {
   return (
     <div className="Contact">
-        <video src="https://www.youtube.com/watch?v=JAnPg9t5hw0" controls></video>
         <form name="contact" autoComplete="on">
             <div className="user-info-field">
                 <h1>Contact Me</h1>
