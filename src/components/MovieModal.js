@@ -1,6 +1,8 @@
 import { FaCalendar, FaClock, FaStar, FaTimes } from 'react-icons/fa';
+import axios from 'axios';
 
 const MovieModal = ({ content, handleModalClose }) => {
+  axios.get(`https://api.themoviedb.org/3/movie/${content.id}/videos?api_key=82b2f38d627e364a5f470420aa8e8ed3&language=en-US`).then(res => console.log(res.data.results[0]));
   const IMG_API = 'https://image.tmdb.org/t/p/w500';
   return (
     <div className='MovieModal'>
@@ -30,8 +32,11 @@ const MovieModal = ({ content, handleModalClose }) => {
             <h2>Storyline</h2>
             <p>{content.overview}</p>
           </div>
-          <div>
+          <div className='movie-casts'>
             <h2>Casts</h2>
+            <div className="casts-list">
+              <img src='' alt="" />
+            </div>
           </div>
         </div>
       </div>

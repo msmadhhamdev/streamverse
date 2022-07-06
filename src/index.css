@@ -236,8 +236,7 @@ main .topic {
 }
 .modal-body h2 {
   width: 98%;
-  padding-bottom: 5px;
-  border-bottom: 1px solid #ccc;
+  
 }
 .modal-image {
   margin-right: 10px;
@@ -260,6 +259,9 @@ main .topic {
 .movie-desc p {
   padding-top: 5px;
   color: #eee;
+}
+.movie-casts {
+  padding: 10px;
 }
 .modal-closer {
   height: 40px;
